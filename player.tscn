@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://pq0lkdo1wtre"]
+
+[ext_resource type="Texture2D" uid="uid://ctxh1krrehn4k" path="res://Unity Tutorial/unitytut-birdbody.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bc5380o3xt5aa" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4flbx"]
+radius = 53.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(579, 304)
+motion_mode = 1
+script = ExtResource("1_onrkg")
+jump_speed = 550.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.255605, 0.249586)
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 11)
+shape = SubResource("CircleShape2D_4flbx")
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
